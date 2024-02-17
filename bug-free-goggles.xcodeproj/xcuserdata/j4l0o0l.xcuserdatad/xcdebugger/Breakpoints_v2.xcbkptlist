@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F1AC2509-4615-4CB5-A1DF-95367A67C732"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4AAAFC1-4C83-46B7-B4CC-17DC3FD5E3BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bug-free-goggles/Views/Main/CleaningClearing/HotelDetailsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "init(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5044091-E06E-46B2-BDF0-1CC586153B82"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bug-free-goggles/Views/Proposal/Components/MapWithPlacesListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13473E27-34F6-4C94-BB9E-4B176276DEA0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bug-free-goggles/Models/Data/HostData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "init(id:title:description:address:imageUrls:dailyPrices:type:cleaningFee:propertyType:isReported:bedRooms:bathRooms:host:whoCanStay:flexibleCheckIn:flexibleCheckOut:guests:latitude:longitude:beds:checkInDate:checkOutDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71AA974B-D48A-41F2-9384-9B1F7697603F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bug-free-goggles/ViewModels/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "fetchAsync()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71AA974B-D48A-41F2-9384-9B1F7697603F - c63362fda12b64f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for bug_free_goggles.HomeViewModel.fetchAsync() async -&gt; ()"
+                  moduleName = "bug-free-goggles"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/j4l0o0l/Projects/curly-happiness/bug-free-goggles/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "71AA974B-D48A-41F2-9384-9B1F7697603F - ca4ae701a75c9003"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) await resume partial function for bug_free_goggles.HomeViewModel.fetchAsync() async -&gt; ()"
+                  moduleName = "bug-free-goggles"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/j4l0o0l/Projects/curly-happiness/bug-free-goggles/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "71AA974B-D48A-41F2-9384-9B1F7697603F - d7e6fef2c00578c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(11) suspend resume partial function for bug_free_goggles.HomeViewModel.fetchAsync() async -&gt; ()"
+                  moduleName = "bug-free-goggles"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/j4l0o0l/Projects/curly-happiness/bug-free-goggles/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "71AA974B-D48A-41F2-9384-9B1F7697603F - d7fd292531fc998e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(12) suspend resume partial function for bug_free_goggles.HomeViewModel.fetchAsync() async -&gt; ()"
+                  moduleName = "bug-free-goggles"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/j4l0o0l/Projects/curly-happiness/bug-free-goggles/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "71AA974B-D48A-41F2-9384-9B1F7697603F - e85aa862586f7114"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor @Sendable () -&gt; () in bug_free_goggles.HomeViewModel.fetchAsync() async -&gt; ()"
+                  moduleName = "bug-free-goggles"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/j4l0o0l/Projects/curly-happiness/bug-free-goggles/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

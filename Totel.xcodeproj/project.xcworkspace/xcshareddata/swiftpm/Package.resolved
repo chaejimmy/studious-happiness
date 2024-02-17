@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "GoogleMaps",
+        "repositoryURL": "https://github.com/YAtechnologies/GoogleMaps-SP",
+        "state": {
+          "branch": "main",
+          "revision": "7223c00b9d7d9520f83ea8b857fd134db7235558",
+          "version": null
+        }
+      },
+      {
+        "package": "PartialSheet",
+        "repositoryURL": "https://github.com/AndreaMiotto/PartialSheet",
+        "state": {
+          "branch": "master",
+          "revision": "415fafa8ed719613b3abc787d52a8aa32a4998b9",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

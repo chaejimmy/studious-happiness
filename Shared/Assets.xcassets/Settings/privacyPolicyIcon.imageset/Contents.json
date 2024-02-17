@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "privacyPolicyIcon.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

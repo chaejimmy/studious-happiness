@@ -1,0 +1,27 @@
+////
+//  BookingsTab.swift
+//  bug-free-goggles
+//
+//  Created by Mac on 28/07/2023.
+//
+
+import SwiftUI
+struct BookingsTab: View {
+    @StateObject private var routerPath = RouterPath()
+    @Binding var popToRootTab: Tab
+    
+    init(popToRootTab: Binding<Tab>) {
+      _popToRootTab = popToRootTab
+    }
+    
+    var body: some View {
+        NavigationStack(path: $routerPath.path) {
+            BookingView()
+                .withAppRouter()
+                .withSheetDestinations(sheetDestinations: $routerPath.presentedSheet)
+                .navigationTitle("Reserved")
+            
+        }
+        .environmentObject(routerPath)
+    }
+}
