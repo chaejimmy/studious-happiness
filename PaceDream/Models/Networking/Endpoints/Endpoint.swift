@@ -47,6 +47,7 @@ let BASE_URL = appURL + API_Ver
 enum Services: String {
     case signup_checkEmail = "auth/signup/check-email"
     case signUp = "auth/signup"
+    case signUpEmail = "auth/signup/email"
     case login = "auth/login"
     
 }

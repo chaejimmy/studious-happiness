@@ -231,30 +231,30 @@ extension OnboardingViewModel {
         }
     }
     
-    func checkEmail(completion: @escaping (Bool) -> Void) {
-        let body: [String: Any] = ["email": email]
-        APIServices(data: body, endPoint: .signup_checkEmail, method: .post).executeQuery() { (result: Result<CheckEmailData, Error>) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let result):
-                    print("\n-------\n result:", result)
-                    if result.status == true {
-                        self.isEmailAvailable = true
-                    } else {
-                        helper.showToast(message: result.data?.error ?? "Email already exists")
-                        self.isEmailAvailable = false
-                    }
-                    completion(self.isEmailAvailable)
-                    
-                case .failure(let error):
-                    print("\n-------\n Error: ", error)
-                    let errorString = error.localizedDescription.replacingOccurrences(of: "URLSessionTask failed with error: ", with: "")
-                    helper.showToast(message: errorString)
-                    completion(false)
-                }
-            }
-        }
-    }
+//    func checkEmail(completion: @escaping (Bool) -> Void) {
+//        let body: [String: Any] = ["email": email]
+//        APIServices(data: body, endPoint: .signup_checkEmail, method: .post).executeQuery() { (result: Result<CheckEmailData, Error>) in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let result):
+//                    print("\n-------\n result:", result)
+//                    if result.status == true {
+//                        self.isEmailAvailable = true
+//                    } else {
+//                        helper.showToast(message: result.data?.error ?? "Email already exists")
+//                        self.isEmailAvailable = false
+//                    }
+//                    completion(self.isEmailAvailable)
+//                    
+//                case .failure(let error):
+//                    print("\n-------\n Error: ", error)
+//                    let errorString = error.localizedDescription.replacingOccurrences(of: "URLSessionTask failed with error: ", with: "")
+//                    helper.showToast(message: errorString)
+//                    completion(false)
+//                }
+//            }
+//        }
+//    }
     func loginWithEmailAsync() async {
         await MainActor.run(body: {
             isLoading = true

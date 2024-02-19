@@ -262,14 +262,15 @@ struct NotLoggedInView: View {
                                 if vm.isEmailAvailable {
                                     routerPath.navigate(to: .basicSetUp)
                                 } else {
-                                    vm.checkEmail { isAvailable in
-                                               if isAvailable {
-                                                   
-                                                   userDefaults.userInfo = ["email" : vm.email, "password": vm.password]
-                                                   
-                                                   routerPath.navigate(to: .basicSetUp)
-                                               }
-                                           }
+//                                    vm.checkEmail { isAvailable in
+//                                               if isAvailable {
+//                                                   
+//                                               }
+//                                           }
+                                    userDefaults.userInfo = ["email" : vm.email, "password": vm.password]
+                                    
+                                    routerPath.navigate(to: .basicSetUp)
+
                                 }
                                 //VerificationView(vm.authFlowType: vm.authFlowType)
                             } label: {

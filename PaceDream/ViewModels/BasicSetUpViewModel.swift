@@ -92,15 +92,16 @@ extension BasicSetUpViewModel {
           password = OnboardingViewModel.shared.password.trimmingCharacters(in: .whitespacesAndNewlines)
           email = OnboardingViewModel.shared.email.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        let body: [String: Any] = ["email": email,
-                                   "firstName" : firstName,
-                                   "lastName": lastName,
-                                   "password": password,
-                                   "dob": birthDate,
-                                   "method": "email"]
-      
-        
-        APIServices(data: body, endPoint: .signUp, method: .post).executeQuery() { (result: Result<SignUpEmailData, Error>) in
+        let body: [String: String] = ["email": email,
+                                      "firstName" : firstName,
+                                      "lastName": lastName,
+                                      "password": password,
+                                      "dob": birthDate,
+                                      "gender": "Male"]
+
+        let imageData: Data? = image?.jpegData(compressionQuality: 0.5)
+
+        APIServices(data: body, endPoint: .signUpEmail, method: .post, profileImageData: imageData, multiPartFormDataData: body).executeQuery { (result: Result<SignUpEmailData, Error>) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let result):

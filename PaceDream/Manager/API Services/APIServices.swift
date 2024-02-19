@@ -17,16 +17,21 @@ class APIServices: NSObject {
     var encoding: ParameterEncoding! = JSONEncoding.default
     var isTokenReq = true
     var showLoader = true
-    
+    var multiPartFormDataData: [String: String] = [:]
+    var profileImageData: Data?
+
     // MARK: - Init
     
-    init(data: [String: Any],
+    init(data: [String: String] = [:],
          headers: [String: String] = [:],
          endPoint: Services? = nil,
          queryPath: String? = "",
          method: HTTPMethod = .post,
          isJSONRequest: Bool = true,
-         isShowLoader: Bool = true) {
+         isShowLoader: Bool = true,
+         profileImageData: Data? = nil,
+         multiPartFormDataData: [String: String] = [:])
+    {
         
         super.init()
         
@@ -65,6 +70,8 @@ class APIServices: NSObject {
             encoding = URLEncoding.default
         }
         self.method = method
+        self.multiPartFormDataData = multiPartFormDataData
+        self.profileImageData = profileImageData
         print("\n\n-------\n Service: \(endPoint?.rawValue ?? self.url ?? "") \n data: \(parameters)")
     }
     
@@ -83,6 +90,46 @@ class APIServices: NSObject {
             helper.showLoader()
         }
         AF.sessionConfiguration.timeoutIntervalForRequest = 60
+        let request = AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
+        do {
+            let urlConvertible = try url.asURL()
+            AF.upload(multipartFormData: { multipartFormData in
+                for (key, value) in self.multiPartFormDataData {
+                    multipartFormData.append(value.data(using: .utf8)!, withName: key)
+                }
+                guard let data = self.profileImageData else { return }
+                let randomNumber = Int.random(in: 1...1000)
+                multipartFormData.append(data, withName: "profilePic\(randomNumber)", fileName: "profilePic\(randomNumber).jpg", mimeType: "image/jpeg")
+            },to: urlConvertible).responseData { response in
+                helper.hideLoader()
+                switch response.result {
+                case .success(let res):
+                    if let code = response.response?.statusCode {
+                        switch code {
+                        case 200...504:
+                            do {
+                                completion(.success(try JSONDecoder().decode(T.self, from: res)))
+                            } catch let error {
+                                print("\n\n---Error----\n", String(data: res, encoding: .utf8) ?? "nothing received")
+                                completion(.failure(error))
+                            }
+                        default:
+                            print("\n\n---Error----\n", String(data: res, encoding: .utf8) ?? "nothing received")
+                            let error = NSError(domain: response.debugDescription, code: code, userInfo: response.response?.allHeaderFields as? [String: Any])
+                            completion(.failure(error))
+                        }
+                    }
+                case .failure(let error):
+                    print("\n\n---Error----\n", error.errorDescription ?? "nothing received")
+                    completion(.failure(error))
+                }
+            }.cURLDescription { description in
+                print("API_cURL_POST_RequestParam:--- \(description)\n_____________________")
+            }
+        } catch {
+            
+        }
+        
         AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).responseData(completionHandler: {response in
             helper.hideLoader()
             switch response.result {
